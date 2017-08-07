@@ -11,7 +11,6 @@ import {
   ActivityIndicator
 } from 'react-native'
 import { connect } from 'react-redux'
-import Styles from './Styles/LoginScreenStyles'
 import {Images, Metrics} from '../Themes'
 import LoginActions from '../Redux/LoginRedux'
 import { Actions as NavigationActions } from 'react-native-router-flux'

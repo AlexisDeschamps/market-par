@@ -77,7 +77,7 @@ class FundSelectionScreen extends React.Component {
               dataSource={this.state.dataSource}
               renderRow={stock => <StockCell stock={stock} watchlistCache={this.state.watchlistCache} onFundSelection={this.onFundSelection} />} />
               :
-              <ActivityIndicator color='blue' size={35}/>}
+            <ActivityIndicator color='blue' size={35} />}
         </View>
       </View>
     )

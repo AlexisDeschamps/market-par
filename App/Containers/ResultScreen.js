@@ -52,7 +52,7 @@ class ResultScreen extends React.Component {
     return message
   }
 
-  getResults() {
+  getResults () {
     const { outcome, year, fund1, fund2, fund1Change, fund2Change, userChange, marketChange } = this.props
     const fund1Message = this.getMessage(fund1, fund1Change)
     const fund2Message = this.getMessage(fund2, fund2Change)
@@ -112,8 +112,8 @@ class ResultScreen extends React.Component {
             <NBButton transparent style={StyleSheet.flatten(styles.button)} onPress={() => { this.setModalVisible(true) }}>
               <NBText>Choose Year</NBText>
             </NBButton>
-            <NBButton transparent style={StyleSheet.flatten(styles.button)} onPress={() => { NavigationActions.statisticsScreen() }}>
-              <NBText>Help & Stats</NBText>
+            <NBButton transparent style={StyleSheet.flatten(styles.button)} onPress={() => { NavigationActions.homeScreen() }}>
+              <NBText>Home</NBText>
             </NBButton>
           </View>
         </ScrollView>
