@@ -9,7 +9,6 @@ import StockCell from './FundSuggestionComponents/StockCell'
 import { connect } from 'react-redux'
 import LoginActions from '../Redux/LoginRedux'
 
-// Styles
 import styles from './Styles/FundSelectionScreenStyles'
 
 class FundSuggestionScreen extends React.Component {
@@ -18,9 +17,7 @@ class FundSuggestionScreen extends React.Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
       dataSource: ds.cloneWithRows([]),
-      loaded: false,
-      text: props['fundx' + props.fundNumber],
-      helpText: 'Type a company name or stock symbol.',
+      text: props['fund' + props.fundNumber],
       fetching: true
     }
     this.onFundSelection = this.onFundSelection.bind(this)
@@ -64,22 +61,15 @@ class FundSuggestionScreen extends React.Component {
         <View style={styles.suggestion}>
           <ListView
             dataSource={this.state.dataSource}
-            renderRow={stock => <StockCell stock={stock} watchlistCache={this.state.watchlistCache} onFundSelection={this.onFundSelection} />}
-                />
+            renderRow={stock => <StockCell stock={stock} watchlistCache={this.state.watchlistCache} onFundSelection={this.onFundSelection} />} />
         </View>
       </View>
     )
   }
 }
 
-FundSuggestionScreen.contextTypes = {
-  drawer: React.PropTypes.object
-}
-
 const mapStateToProps = (state) => {
   return {
-    fundx1: state.login.fund1,
-    fundx2: state.login.fund2,
     year: state.login.year
   }
 }

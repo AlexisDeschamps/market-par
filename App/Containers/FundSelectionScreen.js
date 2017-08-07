@@ -16,7 +16,7 @@ class FundSelectionScreen extends React.Component {
     this.state = {
       dataSource: new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 }),
       loaded: true,
-      text: props['fundx' + props.fundNumber],
+      text: props['fund' + props.fundNumber],
       helpText: 'Type a company name or stock symbol.'
     }
     this.onFundSelection = this.onFundSelection.bind(this)
@@ -84,14 +84,8 @@ class FundSelectionScreen extends React.Component {
   }
 }
 
-FundSelectionScreen.contextTypes = {
-  drawer: React.PropTypes.object
-}
-
 const mapStateToProps = (state) => {
   return {
-    fundx1: state.login.fund1,
-    fundx2: state.login.fund2,
     year: state.login.year
   }
 }

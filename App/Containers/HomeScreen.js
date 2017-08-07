@@ -44,13 +44,13 @@ class HomeScreen extends React.Component {
         <ScrollView style={styles.container}>
           <View style={styles.centeredContainer}>
             <Image source={Images.marketParLogoWhite} style={styles.logo} />
-            <NBButton primary rounded style={styles.button} onPress={this.handlePressRandomYear}>
+            <NBButton primary rounded style={StyleSheet.flatten(styles.button)} onPress={this.handlePressRandomYear}>
               <NBText>Random Year</NBText>
             </NBButton>
-            <NBButton transparent style={styles.button} onPress={() => { this.setModalVisible(true) }}>
+            <NBButton transparent style={StyleSheet.flatten(styles.button)} onPress={() => { this.setModalVisible(true) }}>
               <NBText>Choose Year</NBText>
             </NBButton>
-            <NBButton transparent style={styles.button} onPress={() => { NavigationActions.statisticsScreen() }}>
+            <NBButton transparent style={StyleSheet.flatten(styles.button)} onPress={() => { NavigationActions.statisticsScreen() }}>
               <NBText>Help & Stats</NBText>
             </NBButton>
           </View>
