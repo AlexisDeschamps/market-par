@@ -17,15 +17,13 @@ import StatisticsScreen from '../Containers/StatisticsScreen'
 class NavigationRouter extends Component {
   render () {
     return (
-      <Router>
-        <Scene key='drawer' component={NavigationDrawer} open={false}>
+      <Router hideNavBar={true}>
           <Scene initial key='homeScreen' component={HomeScreen} title='Home Screen' />
           <Scene key='playingScreen' component={PlayingScreen} title='PlayingScreen' />
           <Scene key='fundSelectionScreen' component={FundSelectionScreen} title='Fund Selection Screen' />
           <Scene key='fundSuggestionScreen' component={FundSuggestionScreen} title='Fund Suggestion Screen' />
           <Scene key='resultScreen' component={ResultScreen} title='Result Screen' />
           <Scene key='statisticsScreen' component={StatisticsScreen} title='Statistics Screen' />
-        </Scene>
       </Router>
     )
   }

@@ -43,7 +43,7 @@ class HomeScreen extends React.Component {
       <View style={styles.mainContainer}>
         <ScrollView style={styles.container}>
           <View style={styles.centeredContainer}>
-            <Image source={Images.marketParLogoWhite} style={styles.logo} />
+            <Image source={Images.marketParLogoWhite} style={[styles.logo, {marginBottom: 50}]} />
             <NBButton primary rounded style={StyleSheet.flatten(styles.button)} onPress={this.handlePressRandomYear}>
               <NBText>Random Year</NBText>
             </NBButton>

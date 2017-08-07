@@ -36,7 +36,7 @@ class ResultScreen extends React.Component {
 
   onYearSelect = (year) => {
     this.props.selectYear(year)
-    NavigationActions.pop(15)
+    NavigationActions.pop()
     NavigationActions.playingScreen()
   }
 

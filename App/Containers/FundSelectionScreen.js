@@ -55,11 +55,11 @@ class FundSelectionScreen extends React.Component {
         </Text>
         <View style={styles.triContainer}>
           <View style={styles.leftContainer}>
-            <Icon style={styles.searchIcon} name='search' size={20} color='white' />
+            <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
           <View style={styles.innerContainer}>
             <TextInput
-              style={styles.searchBarInput}
+              style={styles.searchInput}
               autoCapitalize={'characters'}
               autoFocus
               placeholder='Search ticker symbols'
@@ -68,7 +68,7 @@ class FundSelectionScreen extends React.Component {
               value={this.state.text} />
           </View>
           <View style={styles.rightContainer}>
-            <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { NavigationActions.pop() }} />
+            <Icon name='search' size={35} color='white' style={{marginRight: 15}}/>
           </View>
         </View>
         <View style={styles.suggestion}>

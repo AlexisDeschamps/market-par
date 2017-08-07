@@ -47,14 +47,15 @@ class FundSuggestionScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.triContainer}>
-          <View style={styles.leftContainer} />
+          <View style={styles.leftContainer}>
+            <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
+          </View>
           <View style={styles.innerContainer}>
-            <Text style={[styles.helpText]}>
+            <Text style={styles.subtitle}>
               Select one symbol
             </Text>
           </View>
           <View style={styles.rightContainer}>
-            <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { NavigationActions.pop() }} />
           </View>
         </View>
         {this.state.fetching ? <ActivityIndicator color='blue' size='large' /> : <NBText />}
