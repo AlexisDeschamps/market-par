@@ -37,12 +37,12 @@ class PlayingScreen extends React.Component {
   }
 
   handlePressFinish = () => {
-    if (!this.props.fund1 || !this.props.fund2x || this.props.fund1 === this.props.fund2x) {
+    if (!this.props.fund1 || !this.props.fund2 || this.props.fund1 === this.props.fund2) {
       this.setState({formDirty: true})
       return
     }
     this.props.finishRequestStartDispatch()
-    return Finance.getResults(this.props.year, this.props.fund1, this.props.fund2x)
+    return Finance.getResults(this.props.year, this.props.fund1, this.props.fund2)
     .then((results) => {
       this.props.finishRequestEndDispatch()
       NavigationActions.resultScreen(results)
@@ -70,17 +70,17 @@ class PlayingScreen extends React.Component {
     if (!this.state.formDirty) {
       return ''
     }
-    if (!this.props.fund1 || !this.props.fund2x) {
+    if (!this.props.fund1 || !this.props.fund2) {
       return 'Please select two different funds.'
     }
-    if (this.props.fund1 === this.props.fund2x) {
+    if (this.props.fund1 === this.props.fund2) {
       return 'The two funds cannot be the same. Please select different funds.'
     }
     return ''
   }
 
   render () {
-    const { year, fetching, fund1, fund2x } = this.props
+    const { year, fetching, fund1, fund2 } = this.props
     const errorText = this.getErrorText()
     return (
       <View style={styles.mainContainer}>
@@ -121,7 +121,7 @@ class PlayingScreen extends React.Component {
                 <View style={styles.rowContainer}>
                   <Input
                     ref={(ref) => this.fund2 = ref}
-                    value={fund2x}
+                    value={fund2}
                     editable
                     keyboardType='default'
                     returnKeyType='go'
@@ -158,7 +158,7 @@ const mapStateToProps = (state) => {
     year: state.login.year,
     fetching: state.login.fetching,
     fund1: state.login.fund1,
-    fund2x: state.login.fund2
+    fund2: state.login.fund2
   }
 }
 
