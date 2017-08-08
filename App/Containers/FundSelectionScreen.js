@@ -71,13 +71,13 @@ class FundSelectionScreen extends React.Component {
             <Icon name='search' size={35} color='white' style={{marginRight: 15}}/>
           </View>
         </View>
-        <View style={styles.suggestion}>
+        <View>
           {this.state.loaded ?
             <ListView
               dataSource={this.state.dataSource}
               renderRow={stock => <StockCell stock={stock} watchlistCache={this.state.watchlistCache} onFundSelection={this.onFundSelection} />} />
               :
-            <ActivityIndicator color='blue' size={35} />}
+            <ActivityIndicator color="blue" size="large" />}
         </View>
       </View>
     )

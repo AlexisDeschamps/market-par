@@ -24,17 +24,8 @@ const ApplicationStyles = {
       flexDirection: 'row',
       marginBottom: 5
     },
-    button: {
-      width: 150,
-      justifyContent: 'center',
-      alignSelf: 'center',
-      marginBottom: 5
-    },
-    errorText: {
-      fontSize: 18,
-      color: 'red',
-      margin: 5,
-      textAlign: 'center'
+    spaceBetweenContainer: {
+      justifyContent: 'space-between'
     },
     triContainer: {
       height: 60,
@@ -54,7 +45,7 @@ const ApplicationStyles = {
       alignItems: 'center'
     },
     title: {
-      fontSize: 25,
+      fontSize: 24,
       color: 'white',
       textAlign: 'center',
       marginBottom: 5
@@ -62,21 +53,32 @@ const ApplicationStyles = {
     subtitle: {
       fontSize: 20,
       color: 'white',
-      marginTop: 10,
-      marginBottom: 7,
+      marginTop: 8,
+      marginBottom: 8,
       marginLeft: 15
     },
     textLevel1: {
       fontSize: 16,
       color: 'white',
-      marginBottom: 0,
       marginLeft: 15
     },
     textLevel2: {
       fontSize: 16,
       color: 'white',
       marginLeft: 30
-    }
+    },
+    blackText: {
+      color: 'black'
+    },
+    errorText: {
+      color: 'red',
+    },
+    button: {
+      width: 150,
+      justifyContent: 'center',
+      alignSelf: 'center',
+      marginBottom: 5
+    },
   }
 }
 
