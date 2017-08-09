@@ -24,7 +24,7 @@ class FundSuggestionScreen extends React.Component {
 
   componentWillMount () {
     const that = this
-    Finance.getSuggestionFunds(this.props.year)
+    FinanceHelper.getSuggestionFunds(this.props.year)
       .then(suggestedFunds => {
         that.setState({
           dataSource: that.state.dataSource.cloneWithRows(suggestedFunds),

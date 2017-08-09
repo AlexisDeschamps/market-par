@@ -38,11 +38,11 @@ class PlayingScreen extends React.Component {
       return
     }
     this.props.finishRequestStartDispatch()
-    return Finance.getResults(this.props.year, this.props.fund1, this.props.fund2)
-    .then((results) => {
-      this.props.finishRequestEndDispatch()
-      NavigationActions.resultScreen(results)
-    })
+    return FinanceHelper.getResults(this.props.year, this.props.fund1, this.props.fund2)
+      .then((results) => {
+        this.props.finishRequestEndDispatch()
+        NavigationActions.resultScreen(results)
+      })
     .catch(err => console.error(err))
   }
 
@@ -135,7 +135,9 @@ class PlayingScreen extends React.Component {
             </Form>
             <View style={{marginLeft: 15, marginRight: 15}}>
               <NBButton rounded block onPress={this.handlePressFinish} disabled={this.props.fetching} >
-                {fetching ? <ActivityIndicator color='blue' /> : <NBText>Finish</NBText>}
+                {fetching
+                  ? <ActivityIndicator color='blue' />
+                  : <NBText>Finish</NBText>}
               </NBButton>
             </View>
             <Text style={[styles.subtitle, styles.centeredText, styles.errorText, {marginLeft: 10, marginRight: 10, marginTop: errorText ? 30 : 0}]}>

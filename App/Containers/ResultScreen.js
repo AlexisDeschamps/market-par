@@ -54,13 +54,13 @@ class ResultScreen extends React.Component {
   }
 
   getResults () {
-    const { outcome, year, fund1, fund2, fund1Change, fund2Change, userChange, marketChange } = this.props
+    const { outcome, fund1, fund2, fund1Change, fund2Change, userChange, marketChange } = this.props
     const fund1Message = this.getMessage(fund1, fund1Change)
     const fund2Message = this.getMessage(fund2, fund2Change)
     const userMessage = this.getMessage('Overall, you', userChange)
     const marketMessage = this.getMessage('The market', marketChange)
     const advantage = userChange - marketChange
-    const advantageString = Math.abs(((userChange - marketChange) * 100)).toFixed(2)
+    const advantageString = Math.abs(((advantage) * 100)).toFixed(2)
     let outcomeMessage = ''
     let outcomeColor = 'white'
     if (outcome === 'win') {

@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Text, TextInput, ListView, ActivityIndicator } from 'react-native'
 import MIIcon from 'react-native-vector-icons/MaterialIcons'
 import StockCell from '../Components/StockCell'
+
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
-
 import PlayingActions from '../Redux/PlayingRedux'
 import FinanceHelper from '../Utils/FinanceHelper'
 
@@ -30,7 +30,7 @@ class FundSelectionScreen extends React.Component {
     })
 
     const that = this
-    Finance.symbolSuggest(text.text, this.props.year)
+    FinanceHelper.symbolSuggest(text.text, this.props.year)
     .then((result) => {
       that.setState({
         dataSource: that.state.dataSource.cloneWithRows(result),
@@ -72,12 +72,11 @@ class FundSelectionScreen extends React.Component {
           </View>
         </View>
         <View>
-          {this.state.loaded ?
-            <ListView
+          {this.state.loaded
+            ? <ListView
               dataSource={this.state.dataSource}
               renderRow={stock => <StockCell stock={stock} watchlistCache={this.state.watchlistCache} onFundSelection={this.onFundSelection} />} />
-              :
-            <ActivityIndicator color='blue' size='large' />}
+            : <ActivityIndicator color='blue' size='large' />}
         </View>
       </View>
     )

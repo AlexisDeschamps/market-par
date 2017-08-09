@@ -2,7 +2,7 @@ import React from 'react'
 import {
   TouchableOpacity,
   View,
-  Text,
+  Text
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 

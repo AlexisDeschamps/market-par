@@ -5,7 +5,6 @@ import MIIcon from 'react-native-vector-icons/MaterialIcons'
 
 import { connect } from 'react-redux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import PlayingActions from '../Redux/PlayingRedux'
 import StorageHelper from '../Utils/StorageHelper'
 
 import styles from './Styles/StatisticsScreenStyles'
