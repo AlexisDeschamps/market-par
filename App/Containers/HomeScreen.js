@@ -35,6 +35,7 @@ class HomeScreen extends React.Component {
 
   onYearSelect = (year) => {
     this.props.selectYear(year)
+    this.setModalVisible(!this.state.modalVisible)
     NavigationActions.playingScreen()
   }
 
