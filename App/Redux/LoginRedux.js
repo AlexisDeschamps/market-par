@@ -27,21 +27,6 @@ export const INITIAL_STATE = Immutable({
 
 /* ------------- Reducers ------------- */
 
-// we're attempting to login
-// export const request = (state) => state.merge({ fetching: true })
-
-// we've successfully logged in
-/*
-export const success = (state, { username }) =>
-  state.merge({ fetching: false, error: null, username })
-
-// we've had a problem logging in
-export const failure = (state, { error }) =>
-  state.merge({ fetching: false, error })
-
-// we've logged out
-export const logout = (state) => INITIAL_STATE
- */
 export const fund = (state, { fund }) => state.merge({ fund1: fund })
 export const fund2 = (state, { fund }) => state.merge({ fund2: fund })
 export const request = (state) => state.merge({ fetching: true })
@@ -70,5 +55,3 @@ export const HANDLERS = {
 export const reducer = createReducer(INITIAL_STATE, HANDLERS)
 
 /* ------------- Selectors ------------- */
-
-// Is the current user logged in?
