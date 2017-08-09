@@ -51,7 +51,7 @@ class FundSuggestionScreen extends React.Component {
             <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
           <View style={styles.innerContainer}>
-            <Text style={styles.subtitle}>
+            <Text style={[styles.subtitle, styles.lightText]}>
               Select one symbol
             </Text>
           </View>

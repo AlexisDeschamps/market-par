@@ -66,14 +66,14 @@ class HomeScreen extends React.Component {
           <View style={styles.container}>
             <View style={styles.triContainer}>
               <View style={styles.leftContainer} />
-              <Text style={styles.title}>Choose Year</Text>
+              <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Choose Year</Text>
               <View style={styles.rightContainer}>
                 <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
               </View>
             </View>
             <ListView
               dataSource={this.state.dataSource}
-              renderRow={(rowData) => <View><Text style={styles.yearText} onPress={() => this.onYearSelect(rowData)}>{rowData}</Text></View>}
+              renderRow={(rowData) => <View><Text style={[styles.subtitle, styles.centered, styles.lightText, {marginBottom: 5}]} onPress={() => this.onYearSelect(rowData)}>{rowData}</Text></View>}
             />
           </View>
         </Modal>

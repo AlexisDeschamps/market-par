@@ -3,11 +3,6 @@ import { Metrics, ApplicationStyles } from '../../Themes/'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  helpText: {
-    fontSize: 16,
-    color: 'white',
-    alignSelf: 'center'
-  },
   searchInput: {
     color: 'white',
     width: 200,

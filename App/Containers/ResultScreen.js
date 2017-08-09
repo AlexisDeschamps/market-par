@@ -92,19 +92,19 @@ class ResultScreen extends React.Component {
             <Text style={[styles.title, {marginTop: 70, color: results.outcomeColor}]}>
               Outcome — {results.outcomeMessage}
             </Text>
-            <Text style={styles.resultText}>
+            <Text style={[styles.textLevel1, styles.lightText, {marginTop: 15}]}>
               {results.fund1Message}
             </Text>
-            <Text style={styles.resultText}>
+            <Text style={[styles.textLevel1, styles.lightText, {marginTop: 3}]}>
               {results.fund2Message}
             </Text>
-            <Text style={styles.resultText}>
+            <Text style={[styles.textLevel1, styles.lightText, {marginTop: 3}]}>
               {results.userMessage}
             </Text>
-            <Text style={styles.resultText}>
+            <Text style={[styles.textLevel1, styles.lightText, {marginTop: 3}]}>
               {results.marketMessage}
             </Text>
-            <Text style={[styles.resultText, {color: results.outcomeColor, marginBottom: 80}]}>
+            <Text style={[styles.textLevel1, styles.lightText, {marginTop: 3, marginBottom: 80, color: results.outcomeColor}]}>
               {results.advantageMessage}
             </Text>
             <NBButton primary rounded style={StyleSheet.flatten(styles.button)} onPress={this.handlePressRandomYear}>
@@ -128,14 +128,14 @@ class ResultScreen extends React.Component {
           <View style={styles.container}>
             <View style={styles.triContainer}>
               <View style={styles.leftContainer} />
-              <Text style={styles.title}>Choose Year</Text>
+              <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Choose Year</Text>
               <View style={styles.rightContainer}>
                 <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
               </View>
             </View>
             <ListView
               dataSource={this.state.dataSource}
-              renderRow={(rowData) => <View><Text style={styles.yearText} onPress={() => this.onYearSelect(rowData)}>{rowData}</Text></View>}
+              renderRow={(rowData) => <View><Text style={[styles.subtitle, styles.centered, styles.lightText, {marginBottom: 5}]} onPress={() => this.onYearSelect(rowData)}>{rowData}</Text></View>}
             />
           </View>
         </Modal>

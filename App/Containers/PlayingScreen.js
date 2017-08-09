@@ -8,7 +8,8 @@ import {
   Image,
   Keyboard,
   LayoutAnimation,
-  ActivityIndicator
+  ActivityIndicator,
+  StyleSheet
 } from 'react-native'
 import { connect } from 'react-redux'
 import {Images, Metrics} from '../Themes'
@@ -90,7 +91,7 @@ class PlayingScreen extends React.Component {
               <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => { NavigationActions.homeScreen() }} />
             </View>
             <View style={styles.innerContainer}>
-              <Text style={styles.title}>Year — {year}</Text>
+              <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Year — {year}</Text>
             </View>
             <View style={styles.rightContainer} />
           </View>
@@ -129,7 +130,7 @@ class PlayingScreen extends React.Component {
                     underlineColorAndroid='transparent'
                     onFocus={() => { this.handleFundPress(2) }}
                     placeholder='Select fund' />
-                  <NBButton transparent style={{marginRight: 10}} onPress={() => { this.handleFundSuggestionPress(2) }}>
+                  <NBButton transparent style={StyleSheet.flatten(styles.finishButton)} onPress={() => { this.handleFundSuggestionPress(2) }}>
                     <NBText>
                         Suggest
                       </NBText>
@@ -137,12 +138,12 @@ class PlayingScreen extends React.Component {
                 </View>
               </Item>
             </Form>
-            <View style={styles.finishButtonContainer}>
+            <View style={{marginLeft: 15, marginRight: 15}}>
               <NBButton rounded block onPress={this.handlePressFinish} disabled={this.props.fetching} >
                 {fetching ? <ActivityIndicator color='blue' /> : <NBText>Finish</NBText>}
               </NBButton>
             </View>
-            <Text style={[styles.errorText, {marginTop: errorText ? 30 : 0}]}>
+            <Text style={[styles.subtitle, styles.centeredText, styles.errorText, {marginLeft: 10, marginRight: 10, marginTop: errorText ? 30 : 0}]}>
               {errorText}
             </Text>
             <View />

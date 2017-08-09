@@ -12,8 +12,15 @@ const ApplicationStyles = {
       backgroundColor: Colors.transparent
     },
     container: {
-      flex: 3,
+      flex: 1,
       backgroundColor: Colors.darkPrimary
+    },
+    subContainer: {
+      flex: 1,
+      padding: Metrics.baseMargin,
+      backgroundColor: 'white',
+      margin: 20,
+      borderRadius: 5
     },
     centeredContainer: {
       flex: 1,
@@ -44,30 +51,43 @@ const ApplicationStyles = {
       justifyContent: 'flex-end',
       alignItems: 'center'
     },
+    centered: {
+      alignSelf: 'center'
+    },
+    centeredText: {
+      textAlign: 'center'
+    },
     title: {
       fontSize: 24,
-      color: 'white',
+    },
+    titleSpacing: {
       textAlign: 'center',
       marginBottom: 5
     },
     subtitle: {
       fontSize: 20,
-      color: 'white',
+    },
+    subtileSpacing: {
       marginTop: 8,
       marginBottom: 8,
       marginLeft: 15
     },
     textLevel1: {
       fontSize: 16,
-      color: 'white',
+    },
+    textLevel1Spacing: {
       marginLeft: 15
     },
     textLevel2: {
       fontSize: 16,
-      color: 'white',
+    },
+    textLevel2Spacing: {
       marginLeft: 30
     },
-    blackText: {
+    lightText: {
+      color: 'white'
+    },
+    darkText: {
       color: 'black'
     },
     errorText: {

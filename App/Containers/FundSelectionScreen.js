@@ -50,7 +50,7 @@ class FundSelectionScreen extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.helpText}>
+        <Text style={[styles.textLevel1, styles.centered, styles.lightText]}>
           {this.state.helpText}
         </Text>
         <View style={styles.triContainer}>
