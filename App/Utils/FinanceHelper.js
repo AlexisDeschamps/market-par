@@ -1,6 +1,6 @@
 import StorageHelper from './StorageHelper'
 
-exports.symbolSuggest = function symbolSuggest (query, year) {
+exports.stockAutocomplete = function stockAutocomplete (query, year) {
   const url = `http://d.yimg.com/aq/autoc?query=${query}&region=US&lang=en-US&callback=YAHOO.util.ScriptNodeDataSource.callbacks`
   const that = this
   return fetch(url)
@@ -61,6 +61,92 @@ exports.symbolSuggest = function symbolSuggest (query, year) {
   .catch(err => console.error(err))
 }
 
+const getValidFunds = function getValidFunds (year) {
+  const validFunds = []
+  for (const fund of funds) {
+    if (year >= fund.startYear) {
+      validFunds.push({symbol: fund.ticker, company: companyNames[fund.ticker]})
+    }
+  }
+  return validFunds
+}
+
+const getRandomInt = function getRandomInt (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min
+}
+
+const getFundsAsListData = function getFundsAsListData (funds) {
+  const fundsAsListData = []
+  for (const fund of funds) {
+  }
+  return fundsAsListData
+}
+
+exports.getSuggestionFunds = function getSuggestionFunds (year) {
+  const validFunds = getValidFunds(year)
+  const randomFundNumbersArray = [];
+  for (let i = 0; i < 3; i++) {
+      let numberIsInArray = false;
+      let randomFundNumber = getRandomInt(0, validFunds.length);
+      for(var j = 0; j < randomFundNumbersArray.length; j++){
+          if(randomFundNumber === randomFundNumbersArray[j]) {
+              numberIsInArray = true;
+              i--;
+          }
+      }
+      if (!numberIsInArray){
+         randomFundNumbersArray.push(randomFundNumber);
+      }
+  }
+
+  const suggestedFunds = [validFunds[randomFundNumbersArray[0]], validFunds[randomFundNumbersArray[1]], validFunds[randomFundNumbersArray[2]]]
+  suggestedFunds.sort(function compare (a, b) {
+    if (a.symbol < b.symbol) {
+      return -1
+    }
+    if (a.symbol > b.symbol) {
+      return 1
+    }
+    return 0
+  })
+
+  const symbols = [validFunds[randomFundNumbersArray[0]].symbol, validFunds[randomFundNumbersArray[1]].symbol, validFunds[randomFundNumbersArray[2]].symbol]
+  const start = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?'
+  const dateGTE = 'date.gte=' + year + '0105'
+  const dateLT = '&date.lt=' + year + '1230'
+  const tickerPart = '&ticker='
+  const symbolsPart = symbols.join(',')
+  const apiKey = '&api_key=Gk76mE3xGFbNcozxcY6J'
+
+  const url = start + dateGTE + dateLT + tickerPart + symbolsPart + apiKey
+  return fetch(url)
+        .then(response => response.json())
+          .then((result) => {
+            let currentFundIndicator = 0
+            let start = 1
+            let end = 1
+            const data = result.datatable.data
+            let foundFund = false
+            for (let i = 0; i < data.length; i++) {
+              if (!foundFund && data[i]['0'] === suggestedFunds[currentFundIndicator].symbol) {
+                start = data[i]['5']
+                foundFund = true
+              } else if (data[i]['0'] !== suggestedFunds[currentFundIndicator].symbol) {
+                end = data[i - 1]['5']
+                suggestedFunds[currentFundIndicator].lastYearReturn = end / start * 100
+                currentFundIndicator++
+                foundFund = false
+              }
+            }
+            if (foundFund) {
+              end = data[data.length - 1]['5']
+              suggestedFunds[currentFundIndicator].lastYearReturn = end / start * 100
+            }
+            return suggestedFunds
+          })
+        .catch(err => console.error(err))
+}
+
 exports.getResults = function getResults (year, fund1, fund2) {
   const start = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?'
   const dateGTE = 'date.gte=' + year + '0101'
@@ -116,86 +202,6 @@ exports.getResults = function getResults (year, fund1, fund2) {
           StorageHelper.handleFinish(outcome)
           return results
         })
-        .catch(err => console.error(err))
-}
-
-const getValidFunds = function getValidFunds (year) {
-  const validFunds = []
-  for (const fund of funds) {
-    if (year >= fund.startYear) {
-      validFunds.push({symbol: fund.ticker, company: companyNames[fund.ticker]})
-    }
-  }
-  return validFunds
-}
-
-const getRandomInt = function getRandomInt (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min
-}
-
-const getFundsAsListData = function getFundsAsListData (funds) {
-  const fundsAsListData = []
-  for (const fund of funds) {
-  }
-  return fundsAsListData
-}
-
-exports.getSuggestionFunds = function getSuggestionFunds (year) {
-  const validFunds = getValidFunds(year)
-  const firstRandom = getRandomInt(0, validFunds.length)
-  const secondRandom = getRandomInt(0, validFunds.length)
-  const thirdRandom = getRandomInt(0, validFunds.length)
-  if (secondRandom === firstRandom) {
-    const secondRandom = getRandomInt(0, validFunds.length)
-  }
-  if (thirdRandom === firstRandom || thirdRandom === secondRandom) {
-    const thirdRandom = getRandomInt(0, validFunds.length)
-  }
-  const suggestedFunds = [validFunds[firstRandom], validFunds[secondRandom], validFunds[thirdRandom]]
-  suggestedFunds.sort(function compare (a, b) {
-    if (a.symbol < b.symbol) {
-      return -1
-    }
-    if (a.symbol > b.symbol) {
-      return 1
-    }
-    return 0
-  })
-
-  const symbols = [validFunds[firstRandom].symbol, validFunds[secondRandom].symbol, validFunds[thirdRandom].symbol]
-  const start = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?'
-  const dateGTE = 'date.gte=' + year + '0105'
-  const dateLT = '&date.lt=' + year + '1230'
-  const tickerPart = '&ticker='
-  const symbolsPart = symbols.join(',')
-  const apiKey = '&api_key=Gk76mE3xGFbNcozxcY6J'
-
-  const url = start + dateGTE + dateLT + tickerPart + symbolsPart + apiKey
-  return fetch(url)
-        .then(response => response.json())
-          .then((result) => {
-            let currentFundIndicator = 0
-            let start = 1
-            let end = 1
-            const data = result.datatable.data
-            let foundFund = false
-            for (let i = 0; i < data.length; i++) {
-              if (!foundFund && data[i]['0'] === suggestedFunds[currentFundIndicator].symbol) {
-                start = data[i]['5']
-                foundFund = true
-              } else if (data[i]['0'] !== suggestedFunds[currentFundIndicator].symbol) {
-                end = data[i - 1]['5']
-                suggestedFunds[currentFundIndicator].lastYearReturn = end / start * 100
-                currentFundIndicator++
-                foundFund = false
-              }
-            }
-            if (foundFund) {
-              end = data[data.length - 1]['5']
-              suggestedFunds[currentFundIndicator].lastYearReturn = end / start * 100
-            }
-            return suggestedFunds
-          })
         .catch(err => console.error(err))
 }
 

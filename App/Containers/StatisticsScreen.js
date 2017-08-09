@@ -105,7 +105,9 @@ class StatisticsScreen extends React.Component {
                 Games: lost: {this.state.gamesLost}
               </Text>
               <Text style={[styles.subtitle, styles.subtileSpacing, styles.lightText]}>
-                Win percentage: {this.state.winPercentage}%
+                Win percentage: {!isNaN(this.state.winPercentage)
+                                ? this.state.winPercentage + '%'
+                                : 'Not applicable'}
               </Text>
             </ScrollView>
           </NBTab>

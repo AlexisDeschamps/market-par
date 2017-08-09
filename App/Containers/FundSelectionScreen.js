@@ -30,7 +30,7 @@ class FundSelectionScreen extends React.Component {
     })
 
     const that = this
-    FinanceHelper.symbolSuggest(text.text, this.props.year)
+    FinanceHelper.stockAutocomplete(text.text, this.props.year)
     .then((result) => {
       that.setState({
         dataSource: that.state.dataSource.cloneWithRows(result),
