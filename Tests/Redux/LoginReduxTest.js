@@ -1,6 +1,6 @@
 import test from 'ava'
 import Actions, { reducer, INITIAL_STATE } from '../../App/Redux/LoginRedux'
-
+/*
 test('attempt', (t) => {
   const state = reducer(INITIAL_STATE, Actions.loginRequest('u', 'p'))
 
@@ -26,3 +26,4 @@ test('logout', (t) => {
 
   t.falsy(state.username)
 })
+*/

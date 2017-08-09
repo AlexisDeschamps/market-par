@@ -2,6 +2,7 @@ import { put } from 'redux-saga/effects'
 import LoginActions from '../Redux/LoginRedux'
 
 // attempts to login
+/*
 export function * login ({ username, password }) {
   if (password === '') {
     // dispatch failure
@@ -11,3 +12,4 @@ export function * login ({ username, password }) {
     yield put(LoginActions.loginSuccess(username))
   }
 }
+ */

@@ -13,5 +13,5 @@ export default StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     flexDirection: 'column'
-  },
+  }
 })

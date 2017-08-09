@@ -4,21 +4,9 @@ import Finance from '../Utils/Finance'
 
 /* ------------- Types and Action Creators ------------- */
 
-const finishRequestFunction = () => {
-  return (dispatch, getState) => {
-    dispatch(finishRequestStart())
-    return Finance.getResults(2000, 'AAPL', 'MSFT')
-  }
-}
-
 const { Types, Creators } = createActions({
-  loginRequest: ['username', 'password'],
-  loginSuccess: ['username'],
-  loginFailure: ['error'],
-  logout: null,
   changeFund: ['fund'],
   changeFund2: ['fund'],
-  finishRequest: finishRequestFunction,
   finishRequestStart: null,
   finishRequestEnd: null,
   randomizeYear: null,
@@ -30,7 +18,6 @@ export default Creators
 
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
-  username: null,
   error: null,
   fetching: false,
   year: 2000,
@@ -44,6 +31,7 @@ export const INITIAL_STATE = Immutable({
 // export const request = (state) => state.merge({ fetching: true })
 
 // we've successfully logged in
+/*
 export const success = (state, { username }) =>
   state.merge({ fetching: false, error: null, username })
 
@@ -53,7 +41,7 @@ export const failure = (state, { error }) =>
 
 // we've logged out
 export const logout = (state) => INITIAL_STATE
-
+ */
 export const fund = (state, { fund }) => state.merge({ fund1: fund })
 export const fund2 = (state, { fund }) => state.merge({ fund2: fund })
 export const request = (state) => state.merge({ fetching: true })
@@ -71,10 +59,6 @@ export const year = (state, action) => {
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const HANDLERS = {
-  [Types.LOGIN_REQUEST]: request,
-  [Types.LOGIN_SUCCESS]: success,
-  [Types.LOGIN_FAILURE]: failure,
-  [Types.LOGOUT]: logout,
   [Types.CHANGE_FUND]: fund,
   [Types.CHANGE_FUND2]: fund2,
   [Types.FINISH_REQUEST_START]: request,
@@ -88,4 +72,3 @@ export const reducer = createReducer(INITIAL_STATE, HANDLERS)
 /* ------------- Selectors ------------- */
 
 // Is the current user logged in?
-export const isLoggedIn = (loginState) => loginState.username !== null

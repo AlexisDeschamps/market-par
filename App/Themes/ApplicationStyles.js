@@ -71,14 +71,14 @@ const ApplicationStyles = {
       color: 'black'
     },
     errorText: {
-      color: 'red',
+      color: 'red'
     },
     button: {
       width: 150,
       justifyContent: 'center',
       alignSelf: 'center',
       marginBottom: 5
-    },
+    }
   }
 }
 

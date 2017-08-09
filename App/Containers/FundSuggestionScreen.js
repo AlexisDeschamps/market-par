@@ -55,10 +55,9 @@ class FundSuggestionScreen extends React.Component {
               Select one symbol
             </Text>
           </View>
-          <View style={styles.rightContainer}>
-          </View>
+          <View style={styles.rightContainer} />
         </View>
-        {this.state.fetching ? <ActivityIndicator color="blue" size="large" /> : <NBText />}
+        {this.state.fetching ? <ActivityIndicator color='blue' size='large' /> : <NBText />}
         <View style={styles.suggestion}>
           <ListView
             dataSource={this.state.dataSource}

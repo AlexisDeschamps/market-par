@@ -20,22 +20,22 @@ export default class StockCell extends React.Component {
     return (
       <TouchableHighlight onPress={() => this.onPressAdd(this.props.stock.symbol)} underlayColor='#202020'>
         <View style={styles.cellContainer}>
-            <View style={[styles.rowContainer, styles.spaceBetweenContainer]}>
-              <Text style={[styles.textLevel1, styles.blackText]}>
-                {this.props.stock.symbol}
-              </Text>
-              <Text style={[styles.textLevel1, styles.blackText]}>
-                {this.props.stock.company}
-              </Text>
-            </View>
-            <View style={[styles.rowContainer, styles.spaceBetweenContainer]}>
-              <Text style={[styles.textLevel1, styles.blackText]}>
+          <View style={[styles.rowContainer, styles.spaceBetweenContainer]}>
+            <Text style={[styles.textLevel1, styles.blackText]}>
+              {this.props.stock.symbol}
+            </Text>
+            <Text style={[styles.textLevel1, styles.blackText]}>
+              {this.props.stock.company}
+            </Text>
+          </View>
+          <View style={[styles.rowContainer, styles.spaceBetweenContainer]}>
+            <Text style={[styles.textLevel1, styles.blackText]}>
                 Last year return
               </Text>
-              <Text style={[styles.textLevel1, styles.blackText, {color: this.props.stock.lastYearReturn > 100 ? 'green' : 'red'}]}>
-                {this.props.stock.lastYearReturn ? this.props.stock.lastYearReturn.toFixed(2) + '%' : 'Unavailable'}
-              </Text>
-            </View>
+            <Text style={[styles.textLevel1, styles.blackText, {color: this.props.stock.lastYearReturn > 100 ? 'green' : 'red'}]}>
+              {this.props.stock.lastYearReturn ? this.props.stock.lastYearReturn.toFixed(2) + '%' : 'Unavailable'}
+            </Text>
+          </View>
         </View>
       </TouchableHighlight>
     )
@@ -44,7 +44,7 @@ export default class StockCell extends React.Component {
 
 StockCell.propTypes = {
   stock: React.PropTypes.shape({
-    symbol: React.PropTypes.string,
+    symbol: React.PropTypes.string
   })
 }
 

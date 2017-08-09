@@ -87,7 +87,7 @@ class PlayingScreen extends React.Component {
         <ScrollView style={styles.container}>
           <View style={styles.triContainer}>
             <View style={styles.leftContainer}>
-              <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => { NavigationActions.homeScreen()}} />
+              <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => { NavigationActions.homeScreen() }} />
             </View>
             <View style={styles.innerContainer}>
               <Text style={styles.title}>Year — {year}</Text>
