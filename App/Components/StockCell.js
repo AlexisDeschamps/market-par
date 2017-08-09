@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
-import styles from '../Styles/FundSelectionStockCellStyles'
+import styles from './Styles/StockCellStyles'
 
 export default class StockCell extends React.Component {
 

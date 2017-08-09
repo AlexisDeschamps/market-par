@@ -5,7 +5,7 @@ import { Images } from '../Themes'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import Finance from '../Utils/Finance'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import StockCell from './FundSuggestionComponents/StockCell'
+import StockCell from '../Components/StockCell'
 import { connect } from 'react-redux'
 import LoginActions from '../Redux/LoginRedux'
 
