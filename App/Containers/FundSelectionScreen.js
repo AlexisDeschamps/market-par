@@ -1,12 +1,12 @@
 import React from 'react'
-import { ScrollView, Text, View, StyleSheet, TextInput, ListView, ActivityIndicator } from 'react-native'
-import { Text as NBText } from 'native-base'
-import { Actions as NavigationActions } from 'react-native-router-flux'
-import Finance from '../Utils/Finance'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import { View, Text, TextInput, ListView, ActivityIndicator } from 'react-native'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
 import StockCell from '../Components/StockCell'
+import { Actions as NavigationActions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
+
 import PlayingActions from '../Redux/PlayingRedux'
+import FinanceHelper from '../Utils/FinanceHelper'
 
 import styles from './Styles/FundSelectionScreenStyles'
 
@@ -55,7 +55,7 @@ class FundSelectionScreen extends React.Component {
         </Text>
         <View style={styles.triContainer}>
           <View style={styles.leftContainer}>
-            <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
+            <MIIcon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
           <View style={styles.innerContainer}>
             <TextInput
@@ -68,7 +68,7 @@ class FundSelectionScreen extends React.Component {
               value={this.state.text} />
           </View>
           <View style={styles.rightContainer}>
-            <Icon name='search' size={35} color='white' style={{marginRight: 15}} />
+            <MIIcon name='search' size={35} color='white' style={{marginRight: 15}} />
           </View>
         </View>
         <View>

@@ -1,10 +1,11 @@
 import React from 'react'
-import { ScrollView, Text, View, ListView } from 'react-native'
+import { View, ScrollView, Text } from 'react-native'
 import { Tab as NBTab, Tabs as NBTabs } from 'native-base'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
+
 import { connect } from 'react-redux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import PlayingActions from '../Redux/PlayingRedux'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 import StorageHelper from '../Utils/StorageHelper'
 
 import styles from './Styles/StatisticsScreenStyles'
@@ -35,7 +36,7 @@ class StatisticsScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.triContainer}>
           <View style={styles.leftContainer}>
-            <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
+            <MIIcon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
           <View style={styles.innerContainer}>
             <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Help & Stats</Text>

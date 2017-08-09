@@ -1,11 +1,11 @@
 import React from 'react'
-import { ScrollView, Text, Image, View, Modal, TouchableHighlight, ListView, StyleSheet } from 'react-native'
+import { View, ScrollView, Text, Modal, ListView, StyleSheet } from 'react-native'
 import { Button as NBButton, Text as NBText } from 'native-base'
-import { Images } from '../Themes'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
+
 import { connect } from 'react-redux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import PlayingActions from '../Redux/PlayingRedux'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import styles from './Styles/ResultScreenStyles'
 
@@ -80,7 +80,7 @@ class ResultScreen extends React.Component {
     } else if (outcome === 'loss') {
       advantageMessage = 'You came ' + advantageString + ' percentage points under'
     }
-    return {fund1Message, fund2Message, userMessage, marketMessage, outcomeMessage, advantage, outcomeColor}
+    return {fund1Message, fund2Message, userMessage, marketMessage, outcomeMessage, advantageMessage, outcomeColor}
   }
 
   render () {
@@ -130,7 +130,7 @@ class ResultScreen extends React.Component {
               <View style={styles.leftContainer} />
               <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Choose Year</Text>
               <View style={styles.rightContainer}>
-                <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
+                <MIIcon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
               </View>
             </View>
             <ListView

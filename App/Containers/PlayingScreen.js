@@ -3,21 +3,16 @@ import {
   View,
   ScrollView,
   Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  Keyboard,
-  LayoutAnimation,
   ActivityIndicator,
   StyleSheet
 } from 'react-native'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
+import { Button as NBButton, Text as NBText, Form, Item, Input, Label } from 'native-base'
+
 import { connect } from 'react-redux'
-import {Images, Metrics} from '../Themes'
 import PlayingActions from '../Redux/PlayingRedux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import { Button as NBButton, Text as NBText, Form, Item, Input, Label } from 'native-base'
-import Finance from '../Utils/Finance'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import FinanceHelper from '../Utils/FinanceHelper'
 
 import styles from './Styles/PlayingScreenStyles'
 
@@ -88,7 +83,7 @@ class PlayingScreen extends React.Component {
         <ScrollView style={styles.container}>
           <View style={styles.triContainer}>
             <View style={styles.leftContainer}>
-              <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => { NavigationActions.homeScreen() }} />
+              <MIIcon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => { NavigationActions.homeScreen() }} />
             </View>
             <View style={styles.innerContainer}>
               <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Year — {year}</Text>

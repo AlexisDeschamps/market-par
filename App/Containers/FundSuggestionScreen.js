@@ -1,13 +1,12 @@
 import React from 'react'
-import { ScrollView, Text, Image, View, StyleSheet, TextInput, TouchableHighlight, ListView, ActivityIndicator } from 'react-native'
-import { Button, Text as NBText } from 'native-base'
-import { Images } from '../Themes'
-import { Actions as NavigationActions } from 'react-native-router-flux'
-import Finance from '../Utils/Finance'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import { View, Text, ListView, ActivityIndicator } from 'react-native'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
 import StockCell from '../Components/StockCell'
+
+import { Actions as NavigationActions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import PlayingActions from '../Redux/PlayingRedux'
+import FinanceHelper from '../Utils/FinanceHelper'
 
 import styles from './Styles/FundSelectionScreenStyles'
 
@@ -48,7 +47,7 @@ class FundSuggestionScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.triContainer}>
           <View style={styles.leftContainer}>
-            <Icon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
+            <MIIcon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
           <View style={styles.innerContainer}>
             <Text style={[styles.subtitle, styles.lightText]}>
@@ -57,7 +56,7 @@ class FundSuggestionScreen extends React.Component {
           </View>
           <View style={styles.rightContainer} />
         </View>
-        {this.state.fetching ? <ActivityIndicator color='blue' size='large' /> : <NBText />}
+        {this.state.fetching ? <ActivityIndicator color='blue' size='large' /> : null}
         <View style={styles.suggestion}>
           <ListView
             dataSource={this.state.dataSource}

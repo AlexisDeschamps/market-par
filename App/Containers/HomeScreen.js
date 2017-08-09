@@ -1,11 +1,12 @@
 import React from 'react'
-import { ScrollView, Image, View, Modal, ListView, StyleSheet, Text } from 'react-native'
+import { View, ScrollView, Image, Modal, Text, ListView, StyleSheet } from 'react-native'
 import { Button as NBButton, Text as NBText } from 'native-base'
 import { Images } from '../Themes'
-import { connect } from 'react-redux'
+import MIIcon from 'react-native-vector-icons/MaterialIcons'
+
 import { Actions as NavigationActions } from 'react-native-router-flux'
+import { connect } from 'react-redux'
 import PlayingActions from '../Redux/PlayingRedux'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import styles from './Styles/HomeScreenStyles'
 
@@ -68,7 +69,7 @@ class HomeScreen extends React.Component {
               <View style={styles.leftContainer} />
               <Text style={[styles.title, styles.titleSpacing, styles.lightText]}>Choose Year</Text>
               <View style={styles.rightContainer}>
-                <Icon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
+                <MIIcon style={{marginRight: 15}} name='cancel' size={35} color='white' onPress={() => { this.setModalVisible(!this.state.modalVisible) }} />
               </View>
             </View>
             <ListView

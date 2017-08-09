@@ -7,6 +7,6 @@ export default StyleSheet.create({
     height: 66,
     backgroundColor: 'white',
     marginTop: 1,
-    marginBottom: 1,
+    marginBottom: 1
   }
 })

@@ -1,6 +1,5 @@
 import { createReducer, createActions } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-import Finance from '../Utils/Finance'
 
 /* ------------- Types and Action Creators ------------- */
 

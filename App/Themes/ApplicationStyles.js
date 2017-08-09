@@ -58,14 +58,14 @@ const ApplicationStyles = {
       textAlign: 'center'
     },
     title: {
-      fontSize: 24,
+      fontSize: 24
     },
     titleSpacing: {
       textAlign: 'center',
       marginBottom: 5
     },
     subtitle: {
-      fontSize: 20,
+      fontSize: 20
     },
     subtileSpacing: {
       marginTop: 8,
@@ -73,13 +73,13 @@ const ApplicationStyles = {
       marginLeft: 15
     },
     textLevel1: {
-      fontSize: 16,
+      fontSize: 16
     },
     textLevel1Spacing: {
       marginLeft: 15
     },
     textLevel2: {
-      fontSize: 16,
+      fontSize: 16
     },
     textLevel2Spacing: {
       marginLeft: 30

@@ -1,9 +1,8 @@
 import React from 'react'
 import {
-  StyleSheet,
+  TouchableOpacity,
+  View,
   Text,
-  TouchableHighlight,
-  View
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
@@ -18,7 +17,7 @@ export default class StockCell extends React.Component {
 
   render () {
     return (
-      <TouchableHighlight onPress={() => this.onPressAdd(this.props.stock.symbol)} underlayColor='#202020'>
+      <TouchableOpacity onPress={() => this.onPressAdd(this.props.stock.symbol)} underlayColor='#202020'>
         <View style={styles.cellContainer}>
           <View style={[styles.rowContainer, styles.spaceBetweenContainer]}>
             <Text style={[styles.textLevel1, styles.darkText, {marginTop: 5, marginLeft: 10}]}>
@@ -37,14 +36,16 @@ export default class StockCell extends React.Component {
             </Text>
           </View>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     )
   }
 }
 
 StockCell.propTypes = {
   stock: React.PropTypes.shape({
-    symbol: React.PropTypes.string
+    symbol: React.PropTypes.string,
+    company: React.PropTypes.string,
+    lastYearReturn: React.PropTypes.number
   })
 }
 
