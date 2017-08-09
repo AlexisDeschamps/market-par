@@ -6,7 +6,7 @@ import DebugConfig from '../Config/DebugConfig'
 /* ------------- Types ------------- */
 
 import { StartupTypes } from '../Redux/StartupRedux'
-import { LoginTypes } from '../Redux/LoginRedux'
+import { PlayingTypes } from '../Redux/PlayingRedux'
 
 /* ------------- Sagas ------------- */
 

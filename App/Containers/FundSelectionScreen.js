@@ -6,7 +6,7 @@ import Finance from '../Utils/Finance'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import StockCell from '../Components/StockCell'
 import { connect } from 'react-redux'
-import LoginActions from '../Redux/LoginRedux'
+import PlayingActions from '../Redux/PlayingRedux'
 
 import styles from './Styles/FundSelectionScreenStyles'
 
@@ -86,14 +86,14 @@ class FundSelectionScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    year: state.login.year
+    year: state.playing.year
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeFund1Dispatch: (fund) => dispatch(LoginActions.changeFund(fund)),
-    changeFund2Dispatch: (fund) => dispatch(LoginActions.changeFund2(fund))
+    changeFund1Dispatch: (fund) => dispatch(PlayingActions.changeFund(fund)),
+    changeFund2Dispatch: (fund) => dispatch(PlayingActions.changeFund2(fund))
   }
 }
 

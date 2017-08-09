@@ -1,15 +1,15 @@
 import { put } from 'redux-saga/effects'
-import LoginActions from '../Redux/LoginRedux'
+import PlayingActions from '../Redux/PlayingRedux'
 
 // attempts to login
 /*
 export function * login ({ username, password }) {
   if (password === '') {
     // dispatch failure
-    yield put(LoginActions.loginFailure('WRONG'))
+    yield put(PlayingActions.loginFailure('WRONG'))
   } else {
     // dispatch successful logins
-    yield put(LoginActions.loginSuccess(username))
+    yield put(PlayingActions.loginSuccess(username))
   }
 }
  */

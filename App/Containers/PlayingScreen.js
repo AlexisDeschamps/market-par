@@ -13,7 +13,7 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import {Images, Metrics} from '../Themes'
-import LoginActions from '../Redux/LoginRedux'
+import PlayingActions from '../Redux/PlayingRedux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 import { Button as NBButton, Text as NBText, Form, Item, Input, Label } from 'native-base'
 import Finance from '../Utils/Finance'
@@ -156,19 +156,19 @@ class PlayingScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    year: state.login.year,
-    fetching: state.login.fetching,
-    fund1: state.login.fund1,
-    fund2: state.login.fund2
+    year: state.playing.year,
+    fetching: state.playing.fetching,
+    fund1: state.playing.fund1,
+    fund2: state.playing.fund2
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeFund1Dispatch: (fund) => dispatch(LoginActions.changeFund(fund)),
-    changeFund2Dispatch: (fund) => dispatch(LoginActions.changeFund2(fund)),
-    finishRequestStartDispatch: (fund) => dispatch(LoginActions.finishRequestStart()),
-    finishRequestEndDispatch: (fund) => dispatch(LoginActions.finishRequestEnd())
+    changeFund1Dispatch: (fund) => dispatch(PlayingActions.changeFund(fund)),
+    changeFund2Dispatch: (fund) => dispatch(PlayingActions.changeFund2(fund)),
+    finishRequestStartDispatch: (fund) => dispatch(PlayingActions.finishRequestStart()),
+    finishRequestEndDispatch: (fund) => dispatch(PlayingActions.finishRequestEnd())
   }
 }
 

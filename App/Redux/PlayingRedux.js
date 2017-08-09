@@ -13,7 +13,7 @@ const { Types, Creators } = createActions({
   selectYear: ['year']
 })
 
-export const LoginTypes = Types
+export const PlayingTypes = Types
 export default Creators
 
 /* ------------- Initial State ------------- */

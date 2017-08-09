@@ -4,7 +4,7 @@ import { Button as NBButton, Text as NBText } from 'native-base'
 import { Images } from '../Themes'
 import { connect } from 'react-redux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import LoginActions from '../Redux/LoginRedux'
+import PlayingActions from '../Redux/PlayingRedux'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import styles from './Styles/HomeScreenStyles'
@@ -90,8 +90,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    randomizeYear: () => dispatch(LoginActions.randomizeYear()),
-    selectYear: (year) => dispatch(LoginActions.selectYear(year))
+    randomizeYear: () => dispatch(PlayingActions.randomizeYear()),
+    selectYear: (year) => dispatch(PlayingActions.selectYear(year))
   }
 }
 

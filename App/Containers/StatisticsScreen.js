@@ -3,7 +3,7 @@ import { ScrollView, Text, View, ListView } from 'react-native'
 import { Tab as NBTab, Tabs as NBTabs } from 'native-base'
 import { connect } from 'react-redux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import LoginActions from '../Redux/LoginRedux'
+import PlayingActions from '../Redux/PlayingRedux'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import StorageHelper from '../Utils/StorageHelper'
 
