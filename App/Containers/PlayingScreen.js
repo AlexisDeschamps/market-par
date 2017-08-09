@@ -96,7 +96,6 @@ class PlayingScreen extends React.Component {
                 <Label>Fund #1</Label>
                 <View style={styles.rowContainer}>
                   <Input
-                    ref={(ref) => this.fund1 = ref}
                     value={fund1}
                     editable
                     keyboardType='default'
@@ -116,7 +115,6 @@ class PlayingScreen extends React.Component {
                 <Label>Fund #2</Label>
                 <View style={styles.rowContainer}>
                   <Input
-                    ref={(ref) => this.fund2 = ref}
                     value={fund2}
                     editable
                     keyboardType='default'

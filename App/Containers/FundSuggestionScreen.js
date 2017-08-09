@@ -31,7 +31,7 @@ class FundSuggestionScreen extends React.Component {
           fetching: false
         })
       })
-      .catch(err => console.log(error))
+      .catch(error => console.log(error))
   }
 
   onFundSelection (symbol) {

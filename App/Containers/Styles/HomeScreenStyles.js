@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { Metrics, ApplicationStyles, Colors} from '../../Themes/'
+import { Metrics, ApplicationStyles } from '../../Themes/'
 
-export default {
+export default StyleSheet.create({
   ...ApplicationStyles.screen,
   logo: {
     marginTop: Metrics.doubleSection,
@@ -15,4 +15,4 @@ export default {
     alignSelf: 'center',
     marginBottom: 5
   }
-}
+})

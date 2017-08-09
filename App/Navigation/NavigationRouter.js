@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Scene, Router } from 'react-native-router-flux'
-import Styles from './Styles/NavigationContainerStyles'
 
 import FundSelectionScreen from '../Containers/FundSelectionScreen'
 import PlayingScreen from '../Containers/PlayingScreen'
