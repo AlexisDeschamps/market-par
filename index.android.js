@@ -4,4 +4,4 @@ import App from './App/Containers/App'
 
 AppRegistry.registerComponent('MarketPar', () => App)
 
-console.disableYellowBox = true
+console.disableYellowBox = false
