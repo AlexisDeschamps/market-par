@@ -3,9 +3,20 @@ MarketPar is a React Native game about challenging the stock market historically
 
 App Store (iOS) Link: [**TBA**](https://www.google.com)
 
-Google Play (Android) Link: [**TBA**](https://www.google.com)
+Google Play (Android) Link: [**https://play.google.com/store/apps/details?id=com.marketpar&hl=en**](https://play.google.com/store/apps/details?id=com.marketpar&hl=en)
 
 <img src="https://i.imgur.com/SL04bIX.png" alt="MarketPar image">
+
+# Screenshots
+
+<img src="http://i.imgur.com/zNJh7Kw.png" alt="Home">
+<img src="http://i.imgur.com/HN9MfhL.png" alt="Playing">
+<img src="http://i.imgur.com/HN9MfhL.png" alt="Fund Selection">
+<img src="http://i.imgur.com/wAFX5x9.png" alt="Fund Suggestion">
+<img src="http://i.imgur.com/jnD3QVP.png" alt="Results">
+<img src="http://i.imgur.com/XnvT1iB.png" alt="Help & Stats">
+
+
 
 # Features
 Create a two-fund portfolio and see how your returns stack-up to the market.
