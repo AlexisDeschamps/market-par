@@ -11,33 +11,34 @@ import styles from './Styles/ResultScreenStyles'
 
 class ResultScreen extends React.Component {
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     const years = []
     for (let i = 1980; i < 2016; i++) {
       years.push(i)
     }
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
-    this.state = {
-      modalVisible: false,
-      dataSource: ds.cloneWithRows(years)
-    }
-  }
 
-  handlePressRandomYear = () => {
-    this.props.randomizeYear()
-    NavigationActions.pop()
-    NavigationActions.playingScreen()
+    const results = this.getResults(props)
+    this.state = {
+      results,
+      modalVisible: false,
+      dataSource: ds.cloneWithRows(years),
+    }
   }
 
   setModalVisible (visible) {
     this.setState({modalVisible: visible})
   }
 
+  handlePressRandomYear = () => {
+    this.props.randomizeYear()
+    NavigationActions.playingScreen()
+  }
+
   onYearSelect = (year) => {
     this.props.selectYear(year)
     this.setModalVisible(!this.state.modalVisible)
-    NavigationActions.pop()
     NavigationActions.playingScreen()
   }
 
@@ -53,8 +54,8 @@ class ResultScreen extends React.Component {
     return message
   }
 
-  getResults () {
-    const { outcome, fund1, fund2, fund1Change, fund2Change, userChange, marketChange } = this.props
+  getResults (props) {
+    const { outcome, fund1, fund2, fund1Change, fund2Change, userChange, marketChange } = props
     const fund1Message = this.getMessage(fund1, fund1Change)
     const fund2Message = this.getMessage(fund2, fund2Change)
     const userMessage = this.getMessage('Overall, you', userChange)
@@ -84,7 +85,7 @@ class ResultScreen extends React.Component {
   }
 
   render () {
-    const results = this.getResults()
+    const results = this.state.results
     return (
       <View style={styles.mainContainer}>
         <ScrollView style={styles.container}>
