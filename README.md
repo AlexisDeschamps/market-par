@@ -2,6 +2,7 @@
 MarketPar is a React Native game about challenging the stock market historically.
 
 App Store (iOS) Link: [**TBA**](https://www.google.com)
+
 Google Play (Android) Link: [**TBA**](https://www.google.com)
 
 <img src="https://i.imgur.com/SL04bIX.png" alt="MarketPar image">
@@ -24,9 +25,10 @@ With Git and Node.js installed:
 2. cd market-par
 3. Run build
   * for iOS
+    * Prepare an emulator or device
     * run `react-native run-ios`
   * for Android
-    * Run an emulator
+    * Prepare an emulator or device
     * run `react-native run-android`
 
 - To test: npm run test OR npm run test:watch
