@@ -7,7 +7,7 @@ Google Play (Android) Link: [**https://play.google.com/store/apps/details?id=com
 
 # iOS Screenshots
 
-<img src="http://i.imgur.com/5y3tjlE.png" width="240" alt="Home"> <img src="http://i.imgur.com/HN9MfhL.png" width="240" alt="Playing"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Selection"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Suggestion"> <img src="http://i.imgur.com/FUr3Chy.png" width="240" alt="Results"> <img src="http://i.imgur.com/2mzW09I.png" width="240" alt="Help & Stats">
+<img src="http://i.imgur.com/5y3tjlE.png" width="240" alt="Home"> <img src="http://i.imgur.com/vT5f7c3.png" width="240" alt="Playing"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Selection"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Suggestion"> <img src="http://i.imgur.com/FUr3Chy.png" width="240" alt="Results"> <img src="http://i.imgur.com/2mzW09I.png" width="240" alt="Help & Stats">
 
 # Android Screenshots
 
