@@ -53,7 +53,7 @@ class FundSelectionScreen extends React.Component {
         <Text style={[styles.textLevel1, styles.centered, styles.lightText]}>
           {this.state.helpText}
         </Text>
-        <View style={styles.triContainer}>
+        <View style={[styles.triContainer, {marginBottom: 5}]}>
           <View style={styles.leftContainer}>
             <MIIcon style={{marginLeft: 15}} name='arrow-back' size={35} color='white' onPress={() => NavigationActions.pop()} />
           </View>
