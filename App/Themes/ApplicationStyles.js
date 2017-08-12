@@ -9,11 +9,12 @@ const ApplicationStyles = {
   screen: {
     mainContainer: {
       flex: 1,
-      backgroundColor: Colors.transparent
+      backgroundColor: Colors.transparent,
     },
     container: {
       flex: 1,
-      backgroundColor: Colors.darkPrimary
+      backgroundColor: Colors.darkPrimary,
+      paddingTop: 20
     },
     subContainer: {
       flex: 1,
