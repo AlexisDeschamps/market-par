@@ -84,19 +84,19 @@ const getFundsAsListData = function getFundsAsListData (funds) {
 
 exports.getSuggestionFunds = function getSuggestionFunds (year) {
   const validFunds = getValidFunds(year)
-  const randomFundNumbersArray = [];
+  const randomFundNumbersArray = []
   for (let i = 0; i < 3; i++) {
-      let numberIsInArray = false;
-      let randomFundNumber = getRandomInt(0, validFunds.length);
-      for(var j = 0; j < randomFundNumbersArray.length; j++){
-          if(randomFundNumber === randomFundNumbersArray[j]) {
-              numberIsInArray = true;
-              i--;
-          }
+    let numberIsInArray = false
+    let randomFundNumber = getRandomInt(0, validFunds.length)
+    for (var j = 0; j < randomFundNumbersArray.length; j++) {
+      if (randomFundNumber === randomFundNumbersArray[j]) {
+        numberIsInArray = true
+        i--
       }
-      if (!numberIsInArray){
-         randomFundNumbersArray.push(randomFundNumber);
-      }
+    }
+    if (!numberIsInArray) {
+      randomFundNumbersArray.push(randomFundNumber)
+    }
   }
 
   const suggestedFunds = [validFunds[randomFundNumbersArray[0]], validFunds[randomFundNumbersArray[1]], validFunds[randomFundNumbersArray[2]]]

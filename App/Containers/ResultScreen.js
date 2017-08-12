@@ -23,7 +23,7 @@ class ResultScreen extends React.Component {
     this.state = {
       results,
       modalVisible: false,
-      dataSource: ds.cloneWithRows(years),
+      dataSource: ds.cloneWithRows(years)
     }
   }
 
