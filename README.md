@@ -1,4 +1,4 @@
-# Portfolio Rebalancer
+# MarketPar
 MarketPar is a React Native game about challenging the stock market historically.
 
 App Store (iOS) Link: [**TBA**](https://www.google.com)
