@@ -99,6 +99,13 @@ const ApplicationStyles = {
       justifyContent: 'center',
       alignSelf: 'center',
       marginBottom: 5
+    },
+    searchInput: {
+      color: 'white',
+      width: 200,
+      textAlign: 'center',
+      backgroundColor: '#FF9800',
+      borderRadius: 25
     }
   }
 }
