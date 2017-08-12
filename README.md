@@ -5,13 +5,9 @@ App Store (iOS) Link: [**TBA**](https://www.google.com)
 
 Google Play (Android) Link: [**https://play.google.com/store/apps/details?id=com.marketpar&hl=en**](https://play.google.com/store/apps/details?id=com.marketpar&hl=en)
 
-<img src="https://i.imgur.com/SL04bIX.png" alt="MarketPar image">
-
 # Screenshots
 
 <img src="http://i.imgur.com/zNJh7Kw.png" width="240" alt="Home"> <img src="http://i.imgur.com/HN9MfhL.png" width="240" alt="Playing"> <img src="http://i.imgur.com/wAFX5x9.png" width="240" alt="Fund Selection"> <img src="http://i.imgur.com/ZJ2pTyH.png" width="240" alt="Fund Suggestion"> <img src="http://i.imgur.com/jnD3QVP.png" width="240" alt="Results"> <img src="http://i.imgur.com/XnvT1iB.png" width="240" alt="Help & Stats">
-
-
 
 # Features
 Create a two-fund portfolio and see how your returns stack-up to the market.
@@ -30,7 +26,6 @@ Your portfolio's average returns will be compared against the overall stock mark
 - [**reduxsauce**](https://github.com/infinitered/reduxsauce) - Redux syntactic sugar
 - [**NativeBase**](https://nativebase.io/) - UI components library for React Native
 - [**ESLint**](http://eslint.org/) - Linting
-
 
 # How to use
 With Git and Node.js installed:
