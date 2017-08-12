@@ -5,7 +5,11 @@ App Store (iOS) Link: [**TBA**](https://www.google.com)
 
 Google Play (Android) Link: [**https://play.google.com/store/apps/details?id=com.marketpar&hl=en**](https://play.google.com/store/apps/details?id=com.marketpar&hl=en)
 
-# Screenshots
+# iOS Screenshots
+
+<img src="http://i.imgur.com/5y3tjlE.png" width="240" alt="Home"> <img src="http://i.imgur.com/HN9MfhL.png" width="240" alt="Playing"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Selection"> <img src="http://i.imgur.com/YeX4yLL.png" width="240" alt="Fund Suggestion"> <img src="http://i.imgur.com/FUr3Chy.png" width="240" alt="Results"> <img src="http://i.imgur.com/2mzW09I.png" width="240" alt="Help & Stats">
+
+# Android Screenshots
 
 <img src="http://i.imgur.com/zNJh7Kw.png" width="240" alt="Home"> <img src="http://i.imgur.com/HN9MfhL.png" width="240" alt="Playing"> <img src="http://i.imgur.com/wAFX5x9.png" width="240" alt="Fund Selection"> <img src="http://i.imgur.com/ZJ2pTyH.png" width="240" alt="Fund Suggestion"> <img src="http://i.imgur.com/jnD3QVP.png" width="240" alt="Results"> <img src="http://i.imgur.com/XnvT1iB.png" width="240" alt="Help & Stats">
 
