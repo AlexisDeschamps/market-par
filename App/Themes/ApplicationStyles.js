@@ -95,7 +95,7 @@ const ApplicationStyles = {
       color: 'red'
     },
     button: {
-      width: 150,
+      width: 200,
       justifyContent: 'center',
       alignSelf: 'center',
       marginBottom: 5
