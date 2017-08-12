@@ -38,9 +38,10 @@ With Git and Node.js installed:
 2. cd market-par
 3. Run build
   * for iOS
-    * Prepare an emulator or device
+    * Follow https://facebook.github.io/react-native/docs/getting-started.html for iOS until the point of creation
     * run `react-native run-ios`
   * for Android
+    * Follow https://facebook.github.io/react-native/docs/getting-started.html for Android until the point of creation
     * Prepare an emulator or device
     * run `react-native run-android`
 
