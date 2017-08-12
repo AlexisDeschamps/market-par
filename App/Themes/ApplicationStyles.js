@@ -101,11 +101,17 @@ const ApplicationStyles = {
       marginBottom: 5
     },
     searchInput: {
+      fontSize: 16,
       color: 'white',
       width: 200,
       textAlign: 'center',
       backgroundColor: '#FF9800',
-      borderRadius: 25
+      borderRadius: 25,
+      height: 40,
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      lineHeight: 1
     }
   }
 }
