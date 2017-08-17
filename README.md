@@ -1,7 +1,7 @@
 # MarketPar
 MarketPar is a React Native game about challenging the stock market historically.
 
-App Store (iOS) Link: [**TBA**](https://www.google.com)
+App Store (iOS) Link: [**https://itunes.apple.com/us/app/marketpar/id1271115249?ls=1&mt=8**](https://itunes.apple.com/us/app/marketpar/id1271115249?ls=1&mt=8)
 
 Google Play (Android) Link: [**https://play.google.com/store/apps/details?id=com.marketpar&hl=en**](https://play.google.com/store/apps/details?id=com.marketpar&hl=en)
 
